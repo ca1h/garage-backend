@@ -41,7 +41,7 @@ public class BookingServiceImpl implements BookingService {
 
     // Check if the date is before the curent day
     if (createBookingDto.getDate().isBefore(LocalDate.now())) {
-      throw new ImpossibleToScheduleException( "It doesn't make sense.", "Before today");
+      throw new ImpossibleToScheduleException( "Please select a correct date", "Before today");
     }
 
     User user = userService.getLoggedInUser();
